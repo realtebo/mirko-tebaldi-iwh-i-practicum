@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= title
+
+    p
+      a(href="/update-cobj") Add to this table
+        
+    if games.length
+      table(border="1" cellpadding="5" cellspacing="0")
+        thead
+          tr
+            th Name
+            th Year
+            th Genre
+        tbody
+          each game in games
+            tr
+              td= game.properties.name
+              td= game.properties.year
+              td= game.properties.genre
+    else
+      p No games found.
+
+    
